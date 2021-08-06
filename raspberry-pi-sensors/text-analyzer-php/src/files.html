@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+		<header id="header">
+			<div class="inner">
+				<nav id="nav">
+					<a href="/">Index</a>
+				</nav>
+				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			</div>
+		</header>
+
+		<section id="main" class="wrapper">
+			<div class="inner">		
+				<h2> Contents: </h2>
+				<?php include "contents.php"; ?>
+
+
+				<form action="upload.html" method="post" enctype="multipart/form-data">
+					Select file to upload:
+					<label class="custom-file-upload"><input type="file" name="fileToUpload" id="fileToUpload">
+					<i class="fa fa-cloud-upload"></i>
+					Select File</label>
+					<input type="submit" value="Upload" name="submit">
+				</form>
+			</div>
+		</section>
+	</body>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</html>
