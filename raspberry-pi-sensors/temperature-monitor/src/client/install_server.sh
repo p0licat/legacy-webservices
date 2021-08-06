@@ -1,5 +1,33 @@
 #!/bin/bash
 
+read -r -p "Install dependency? [y/N] " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        sudo apt install libmariadb3
+
+
+        read -r -p "Insert username for DB Connection: " u1
+        read -r -p "Insert password for DB Connection: " p1
+
+        echo $u1
+        echo $p1
+
+        vstr="{
+    \"MainConnection\": {
+        \"username\": \"$u1\",
+        \"password\": \"$p1\"
+    }
+}"
+
+        echo $vstr > db_config.json
+
+        ;;
+    *)
+        echo "Cannot continue."
+        exit 1
+        ;;
+esac
+
 read -r -d '' VAR << EOM
 [Unit]
 Description=Sensor connector to DB
